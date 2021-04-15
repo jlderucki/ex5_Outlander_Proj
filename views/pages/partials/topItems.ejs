@@ -1,0 +1,24 @@
+<article class="itemslist jumbotron d-none d-sm-block">
+  <div class="container">
+    <div class="row">
+      <% topItems.forEach(function(item) {%>
+      <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+        <h4 class="itemslist-title"><%=item.title%></h4>
+        <div class="itemslist-name">
+          <div style="font-weight: lighter;">Category:
+          <a href="/categories/<%=item.category%>"><%=item.category%></a></div>
+        </div>
+        <p class="itemslist-info mt-2">
+          <a href="/items/<%=item.id%>">
+            <img
+              class="topItemslist-img rounded-circle"
+              src="<%=item.image%>"
+              alt="Photo of <%=item.name%>" width="200px"
+            />
+          </a>
+        </p>
+      </div>
+      <%})%>
+    </div>
+  </div>
+</article>

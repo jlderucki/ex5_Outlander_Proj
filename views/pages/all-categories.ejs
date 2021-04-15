@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <article class="itemslist maincontent">
+        <% categories.forEach(function (categoryObj) {%>
+        <div class="mb-4">
+          <h3 class="itemslist-title pb-2">Category: <a href="/categories/<%=categoryObj.category%>"><%=categoryObj.category%></a></h3>
+            <div class="ml-5">
+              <% categoryObj.categoryItems.forEach(function (item) {%>
+              <div class="mb-4">
+                <h4 class="itemslist-title"><a href="/items/<%=item.id%>"><%=item.title%></h4></a>
+                <p>
+                  Location: <%=item.location%>
+                </p>
+                <div class="row itemslist-info mt-2">
+                  <div class="col-md-6">
+                    <a href="/items/<%=item.id%>">
+                      <img
+                        class="itemslist-img rounded-circle img-fluid"
+                        src="<%=item.image%>"
+                        alt="Photo of <%=item.name%>" width="500" height="300"
+                      />
+                    </a>
+                    <p class="photocredit"><span class="iconify" data-icon="bi:camera" data-inline="false"></span>: <a href="<%=item.credit%>" target="_blank"><%=item.photographer%></a>
+                    </p>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="embed-responsive embed-responsive-16by9 mb-3">
+                  <iframe class="embed-responsive-item width="500" height="300" src="<%=item.video%>" title="YouTube video player" allowfullscreen></iframe>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <%})%>
+                </div>
+        </div>
+        <%})%>
+      </article>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="pb-3 itemslist-title">
+        Items By Category: <%=catItems[0].category%>
+      </h3>
+      <article class="itemslist maincontent ml-4">
+        <% catItems.forEach(function(item) {%>
+          <div class="mb-4">
+            <h4 class="itemslist-title"><a href="/items/<%=item.id%>"><%=item.title%></a></h4>
+            <div class="itemslist-name">
+              <p> Location: <%=item.location%></p>
+            </div>
+            <div class="row itemslist-info mt-2">
+              <div class="col-md-6">
+                <a href="/items/<%=item.id%>">
+                  <img
+                  class="itemslist-img rounded-circle img-fluid"
+                  src="<%=item.image%>" width="500"
+                  alt="Photo of <%=item.name%>"
+                  /></a>
+                  <p class="photocredit"><span class="iconify" data-icon="bi:camera" data-inline="false"></span>: <a href="<%=item.credit%>" target="_blank"><%=item.photographer%></a>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <div class="embed-responsive embed-responsive-16by9 mb-3">
+                    <iframe  class="embed-responsive-item width="500" height="300" src="<%=item.video%>" title="YouTube video player" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%})%>
+          </article>
+        </div>
+      </div>
+    </div>

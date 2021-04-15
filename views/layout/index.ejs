@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= siteName %> | <%= pageTitle %></title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link href="//db.onlinewebfonts.com/c/3155bb9a43a1e1349fde80b0116fe6cd?family=Charlemagne+Std" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=block"
+      rel="stylesheet"
+    />
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvVwM3etsaVrIQx0kqR2QGfeVRvjKdepM&callback=initMap&libraries=&v=weekly" defer></script>-->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    
+
+  </head>
+
+  <body>
+    <header>
+      <div class="jumbotron d-none d-sm-block"></div>
+      <%- include('./partials/navigation') %>
+    </header>
+    <%- include(`../pages/${template}`) %>
+    <%- include('./partials/scripts') %>
+    <!--Footer Section-->
+    <footer>
+      <div id="footerSection" class="py-1 bg-dark" style="height:50px;">
+        <div id="column1" style="float:left; margin:0; width:50%; text-align:left;" class="pl-2 pb-2 pt-2 bg-dark text-light">Janette Derucki</div>
+        <div id="column3" style="float:right; margin:0; width:50%; text-align:right;" class="pr-2 pb-2 pt-2 bg-dark text-light">559: Web Programming / Spring 2021</div>
+      </div>
+    </footer>
+  </body>
+</html>
